@@ -1,0 +1,99 @@
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(10rem);
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --clr: #abc7f6;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    width: 400px;
+}
+
+.card__content {
+    text-align: center;
+    overflow: visible;
+    position: relative;
+    padding: 15rem 5rem;
+    transition: transform 3s;
+    /* background: pink; */
+    transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+    transform: rotateY(.5turn);
+    /*or use rotateY(180deg)*/
+}
+
+.card__front,
+.card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5rem 3em;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    display: grid;
+    gap: 50px;
+    align-content: center;
+}
+
+.card__front {
+    /* background-color: rgba(255, 255, 255, 0.194); */
+    background-image: url(https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: rgb(255, 255, 255);
+}
+
+.card__front::before {
+    content: "";
+    position: absolute;
+    padding: 1em;
+    top: 2em;
+    bottom: 2em;
+    left: 3em;
+    right: 3em;
+    border: 2px solid white;
+    transform: var(--level-one);
+}
+
+.card__title {
+    font-size: 3rem;
+    transform: var(--level-three);
+}
+
+.card__subtitle {
+    transform: var(--level-two);
+    font-weight: var(--fw-bold);
+    opacity: 0.8;
+}
+
+.card__body {
+    transform: var(--level-two);
+}
+
+.card__back {
+    transform: rotateY(.5turn);
+    background: black;
+    color: var(--clr);
+}

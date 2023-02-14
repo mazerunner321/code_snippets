@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+button {
+    padding: 12px;
+    width: 190px;
+    cursor: pointer;
+    background: #799be6;
+    color: white;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: transparent;
+    border: 2px solid #799be6;
+    box-shadow: 0 0 20px 0 #69a7ff inset, 0 0 10px 4px #799be6;
+    border-radius: 10px;
+}
