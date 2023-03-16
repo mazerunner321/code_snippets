@@ -1,0 +1,38 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: transparent;
+    outline: 2px solid #fff;
+}
+
+.input-lable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transition: transform .25s;
+}
+
+.input:focus+.input-lable,
+.input:valid+.input-lable {
+    transform: translate(10px, -14px) scale(.8);
+    color: #d1c5fc;
+    padding-inline: 5px;
+    background-color: #242329;
+}
+
+.input:is(:focus, :valid) {
+    outline-color: #d1c5fc;
+}
