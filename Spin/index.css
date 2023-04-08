@@ -1,0 +1,32 @@
+* {
+    background-color: rgb(52, 52, 52);
+}
+
+.sqr {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 35vh;
+    background-image: conic-gradient(red, yellow, orange, blue, green, black);
+    border-radius: 10px;
+    animation: rotate 0.5s infinite linear paused;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sqr:hover {
+    animation-play-state: running;
+}
+
+.sqr {
+    rotate: 0deg;
+    transition: rotate 3s cubic-bezier(0.5, 1, 1, 1);
+}
+
+.sqr:hover {
+    rotate: -720deg;
+}
